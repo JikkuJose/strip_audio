@@ -1,0 +1,25 @@
+#!/usr/bin/env ruby
+
+require 'thor'
+
+module StripAudio
+
+  class CLI < Thor
+
+    default_task :help
+
+    desc "help", "Displays help"
+    def help
+    end
+
+    desc "--source NEWS_SOURCE", "Show news for NEWS_SOURCE"
+    option :source, :required => true, :aliases => :s
+    def news_from_source
+      TinyNews.print_to_cli( options[:source].to_sym )
+    end
+  end
+
+end
+
+StripAudio::CLI.start( ARGV )
+
