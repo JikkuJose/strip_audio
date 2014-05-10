@@ -16,7 +16,7 @@ module StripAudio
 
       begin
         audio_file_exists?( video_file )
-      rescue Exception => e
+      rescue AudioFileAlreadyExists => e
         puts e.message
         exit
       end
@@ -24,7 +24,7 @@ module StripAudio
       o = `ffmpeg -i #{video_file} -ab #{@@options[:bitrate]} -ac 2 -ar 44100 -vn #{audio_file(video_file)} 2>&1`
       begin
         command_output o
-      rescue Exception => e
+      rescue InvalidSourceFile => e
         puts e.message
       end
     end

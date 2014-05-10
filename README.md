@@ -26,7 +26,9 @@ Install using [aptitude](https://wiki.debian.org/Aptitude):
 
 ## Usage
 
-    strip_audio file.mp4 # will produce file.mp3
+To strip audio from file.mp4 to file.mp3:
+
+    strip_audio file.mp4
 
 ## Todo
 
