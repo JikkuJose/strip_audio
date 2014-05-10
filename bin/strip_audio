@@ -1,25 +1,54 @@
 #!/usr/bin/env ruby
 
-require 'thor'
+require 'strip_audio'
 
 module StripAudio
 
-  class CLI < Thor
-
-    default_task :help
-
-    desc "help", "Displays help"
-    def help
-    end
-
-    desc "--source NEWS_SOURCE", "Show news for NEWS_SOURCE"
-    option :source, :required => true, :aliases => :s
-    def news_from_source
-      TinyNews.print_to_cli( options[:source].to_sym )
-    end
+  class InValidArguments < StandardError
   end
 
-end
+  class CLI
 
-StripAudio::CLI.start( ARGV )
+    VIDEO_FORMATS = %w[mp4 avi flv mkv mov]
+
+    def initialize
+      @videos = ARGV
+
+      doctor
+
+      @stripper = Stripper.new format:"mp3"
+      process
+    end
+
+    def process
+      @videos.each do |video|
+        @stripper.strip(video)
+      end
+    end
+
+    private
+
+    def doctor
+      unless files_exist? && valid_video_formats?
+        raise InValidArguments, "Please check the video file names provided." 
+      end
+    end
+
+    def files_exist?
+      @videos.all? do |video|
+        File.file?(video)
+      end
+    end
+
+    def valid_video_formats?
+      @videos.all? do |video|
+        VIDEO_FORMATS.include? File.extname(video)[1..-1]
+      end
+    end
+
+  end
+
+  app =  CLI.new
+
+end
 

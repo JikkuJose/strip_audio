@@ -6,6 +6,9 @@ end
 class FfmpegEncodingError < StandardError
 end
 
+class InvalidSourceFile < StandardError
+end
+
 class AudioFileAlreadyExists < StandardError
 end
 

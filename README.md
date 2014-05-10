@@ -10,12 +10,12 @@ Install it yourself as:
 
 ## Usage
 
-ffmpeg
-
-
-## Usage
-
     strip_audio file.mp4 # will produce file.mp3
+
+## Todo
+
+* Progress bar denoting status.
+* Batch processing of all files from location.
 
 ## Contributing
 
