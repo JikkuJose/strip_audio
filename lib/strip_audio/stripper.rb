@@ -21,7 +21,7 @@ module StripAudio
         exit
       end
 
-      o = `ffmpeg -i #{video_file} -ab #{@@options[:bitrate]} -ac 2 -ar 44100 -vn #{audio_file(video_file)} 2>&1`
+      o = `ffmpeg -i '#{video_file}' -ab #{@@options[:bitrate]} -ac 2 -ar 44100 -vn '#{audio_file(video_file)}' 2>&1`
       begin
         command_output o
       rescue InvalidSourceFile => e
