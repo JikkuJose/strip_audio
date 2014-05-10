@@ -1,12 +1,28 @@
-# StripAudio
+# strip_audio
 
-TODO: Write a gem description
+Strips audio from video files.
 
 ## Installation
 
 Install it yourself as:
 
     $ gem install strip_audio
+
+## Dependency
+
+* [ffmpeg](http://www.ffmpeg.org/)
+
+### Mac OSX
+
+Install using [homebrew](http://brew.sh/): 
+
+    brew install ffmpeg
+
+### Linux
+
+Install using [aptitude](https://wiki.debian.org/Aptitude):
+
+    sudo apt-get install ffmpeg
 
 ## Usage
 
