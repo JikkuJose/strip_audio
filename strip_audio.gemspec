@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["jikkujose@gmail.com"]
   spec.summary       = %q{Strips audio from video files.}
   spec.description   = %q{A simple wrapper for ffmpeg to strip audio from video files.}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/jikkujose/strip_audio/"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
