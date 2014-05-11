@@ -27,7 +27,7 @@ module StripAudio
 
     def doctor
       unless files_exist? && valid_video_formats?
-        raise InValidArguments, "Please check the video file names provided." 
+        raise InvalidArguments, "Please check the video file names provided."
       end
     end
 
