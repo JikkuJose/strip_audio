@@ -6,9 +6,6 @@ require 'strip_audio'
 
 module StripAudio
 
-  class InValidArguments < StandardError
-  end
-
   class CLI
 
     VIDEO_FORMATS = %w[mp4 avi flv mkv mov]
@@ -32,7 +29,7 @@ module StripAudio
 
     def doctor
       unless files_exist? && valid_video_formats?
-        raise InValidArguments, "Please check the video file names provided." 
+        raise InvalidArguments, "Please check the video file names provided."
       end
     end
 
