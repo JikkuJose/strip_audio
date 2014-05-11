@@ -12,4 +12,7 @@ module StripAudio
   class AudioFileAlreadyExists < StandardError
   end
 
+  class InValidArguments < StandardError
+  end
+
 end

@@ -4,9 +4,6 @@ require 'strip_audio'
 
 module StripAudio
 
-  class InValidArguments < StandardError
-  end
-
   class CLI
 
     VIDEO_FORMATS = %w[mp4 avi flv mkv mov]
