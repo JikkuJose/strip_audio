@@ -16,19 +16,19 @@ Install it yourself as:
 
 Install using [homebrew](http://brew.sh/): 
 
-    brew install ffmpeg
+    $ brew install ffmpeg
 
 ### Linux
 
 Install using [aptitude](https://wiki.debian.org/Aptitude):
 
-    sudo apt-get install ffmpeg
+    $ sudo apt-get install ffmpeg
 
 ## Usage
 
 To strip audio from file.mp4 to file.mp3:
 
-    strip_audio file.mp4
+    $ strip_audio file.mp4
 
 ## Todo
 
