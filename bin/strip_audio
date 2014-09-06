@@ -47,6 +47,6 @@ module StripAudio
 
   end
 
-  app =  CLI.new
+  CLI.new
 
 end
